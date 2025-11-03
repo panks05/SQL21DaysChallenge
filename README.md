@@ -20,7 +20,7 @@ The challenge uses a **Hospital Database** consisting of 4 core tables:
 | Table Name | Description |
 |-------------|--------------|
 | `patients` | Contains patient demographics and health information |
-| `services` | Stores information about hospital services offered |
+| `services_weekly` | Stores information about hospital services offered |
 | `staff` | Includes staff details such as roles and departments |
 | `staff_schedule` | Tracks staff duty timings and availability |
 
