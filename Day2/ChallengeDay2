@@ -1,0 +1,9 @@
+-- Find all patients admitted to 'Surgery' service with a satisfaction score below 70, showing their patient_id, name, age, and satisfaction score.
+USE hospital;
+SELECT 
+patient_id,
+name AS patient_name,
+age AS patient_age,
+satisfaction AS satisfaction_score
+FROM patients
+WHERE service = 'surgery' AND satisfaction < 70;
