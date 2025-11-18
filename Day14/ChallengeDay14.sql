@@ -1,0 +1,19 @@
+-- Create a staff utilisation report showing all staff members (staff_id, staff_name, role, service) and the count of weeks they were present (from staff_schedule). Include staff members even if they have no schedule records. Order by weeks present descending.
+USE hospital;
+SELECT
+	s.staff_id,
+	s.staff_name,
+	s.role,
+	s.service,
+	COALESCE(SUM(ss.present), 0) as total_weeks_present
+FROM staff as s
+LEFT JOIN staff_schedule as ss
+	ON s.staff_id = ss.staff_id
+GROUP BY 
+	s.staff_id,
+	s.staff_name,
+	s.role,
+	s.service
+ORDER BY total_weeks_present DESC;
+
+
